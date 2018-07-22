@@ -45,6 +45,9 @@ class Tx(Tx):
         # version has 4 bytes, little-endian, interpret as int
         version = little_endian_to_int(s.read(4))
         # leave inputs, outputs and locktime empty for now
+        inputs = []
+        outputs = []
+        locktime = []
         # return an instance of the class (cls(...))
-        return cls(version, [], [], [])
+        return cls(version, inputs, outputs, locktime)
 ```
