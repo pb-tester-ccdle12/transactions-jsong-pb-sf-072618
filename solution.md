@@ -44,18 +44,7 @@ class Tx(Tx):
         # s.read(n) will return n bytes
         # version has 4 bytes, little-endian, interpret as int
         version = little_endian_to_int(s.read(4))
-        # num_inputs is a varint, use read_varint(s)
-        num_inputs = read_varint(s)
-        # each input needs parsing
-        inputs = []
-        for _ in range(num_inputs):
-            inputs.append(TxIn.parse(s))
-        # num_outputs is a varint, use read_varint(s)
-        num_outputs = read_varint(s)
-        # each output needs parsing
-        outputs = []
-        for _ in range(num_outputs):
-            outputs.append(TxOut.parse(s))
+        # leave inputs, outputs and locktime empty for now
         # return an instance of the class (cls(...))
-        return cls(version, inputs, outputs, locktime)
+        return cls(version, [], [], [])
 ```

@@ -43,11 +43,7 @@ class Tx(Tx):
         '''
         # s.read(n) will return n bytes
         # version has 4 bytes, little-endian, interpret as int
-        # num_inputs is a varint, use read_varint(s)
-        # each input needs parsing
-        # num_outputs is a varint, use read_varint(s)
-        # each output needs parsing
-        # return an instance of the class (cls(...))
+        # leave inputs, outputs and locktime empty for now
+        # return an instance of the class... cls(version, inputs, outputs, locktime)
         pass
-
 ```
